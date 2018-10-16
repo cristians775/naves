@@ -2,9 +2,9 @@ import navesespaciales.*
 
 class NavePasajero inherits NaveEspacial {
 
-	var property pasajero
-	var comida
-	var bebida
+	var property pasajero=0
+	var comida=0
+	var bebida=0
 
 	method cargarComida(raciones) {
 		comida += raciones
@@ -39,5 +39,7 @@ class NavePasajero inherits NaveEspacial {
 		comida -= pasajero
 		bebida -= (pasajero * 2)
 	}
+	
+	
 
 }

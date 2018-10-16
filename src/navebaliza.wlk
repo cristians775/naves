@@ -16,7 +16,15 @@ class NaveBaliza inherits NaveEspacial {
 
 	override method recibirAmenaza() {
 		self.irHaciaElSol()
-		self.cambiarDeColorBaliza("rojo")
+		self.cambiarColorBaliza("rojo")
+	}
+	override method estaTranquila(){
+		
+		
+		
+		return super() && color!="rojo"
+	
+		
 	}
 
 }

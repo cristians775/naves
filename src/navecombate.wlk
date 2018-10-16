@@ -3,7 +3,7 @@ import navesespaciales.*
 class NaveCombate inherits NaveEspacial {
 
 	var invisible
-	var misilesDesplegados
+	var misilesDesplegados=false
 	var mensaje = []
 
 	method ponerseVisible() {
@@ -69,6 +69,12 @@ class NaveCombate inherits NaveEspacial {
 
 	method avisar() {
 		self.emitirMensaje("Amenaza recibida")
+	}
+	
+	override method estaTranquila(){
+		
+		return super() && !self.misilesDesplegados()
+		
 	}
 
 }
