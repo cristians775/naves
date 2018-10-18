@@ -55,12 +55,17 @@ class NaveEspacial {
 	method recibirAmenaza() {
 		self.escapar()
 		self.avisar()
+	}
+
+	method escapar() {
+	}
+
+	method avisar() {
+	}
+
+	method estaTranquila() {
+		return combustible >= 4000 && velocidad < 12000
+	}
+
 }
-   method estaTranquila(){
-   
-   		
-   		return combustible>=4000 && velocidad<12000
-   		}
-   	
-   	
-   }
+

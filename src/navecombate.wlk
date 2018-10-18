@@ -62,12 +62,12 @@ class NaveCombate inherits NaveEspacial {
 		self.acelerar(15000)
 	}
 
-	method escapar() {
+	override method escapar() {
 		self.acercarseUnPocoAlSol()
 		self.acercarseUnPocoAlSol()
 	}
 
-	method avisar() {
+	override method avisar() {
 		self.emitirMensaje("Amenaza recibida")
 	}
 	

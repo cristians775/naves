@@ -31,11 +31,11 @@ class NavePasajero inherits NaveEspacial {
 		super()
 	}
 
-	method escapar() {
+	override method escapar() {
 		velocidad = velocidad * 2
 	}
 
-	method avisar() {
+	override method avisar() {
 		comida -= pasajero
 		bebida -= (pasajero * 2)
 	}
