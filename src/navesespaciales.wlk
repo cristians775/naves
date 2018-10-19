@@ -2,15 +2,15 @@ class NaveEspacial {
 
 	var velocidad = 0
 	var direccion = 0
-	var combustible = 0
+	var property combustible = 100
 
 	method acelerar(cuanto) {
-		velocidad = cuanto
+		velocidad = velocidad + cuanto
 		velocidad = velocidad.min(100000)
 	}
 
 	method desacelerar(cuanto) {
-		velocidad += cuanto
+		velocidad = velocidad - cuanto
 		velocidad = velocidad.max(0)
 	}
 
@@ -29,26 +29,26 @@ class NaveEspacial {
 	}
 
 	method acercarseUnPocoAlSol() {
-		direccion += 1
+		direccion = direccion + 1
 		direccion = direccion.min(10)
 	}
 
 	method alejarseUnPocoDelSol() {
-		direccion -= 1
+		direccion = direccion - 1
 		direccion = direccion.max(-10)
 	}
 
 	method prepararViaje() {
-		self.cargarCombustible(3000)
+		self.cargarCombustible(30000)
 		self.acelerar(5000)
 	}
 
 	method cargarCombustible(litros) {
-		combustible += litros
+		combustible = combustible + litros
 	}
 
 	method descargarCombustible(cant) {
-		combustible -= cant
+		combustible = combustible - cant
 		combustible = combustible.max(0)
 	}
 
@@ -57,14 +57,24 @@ class NaveEspacial {
 		self.avisar()
 	}
 
-	method escapar() {
-	}
+	method escapar()
 
-	method avisar() {
-	}
+	method avisar()
 
 	method estaTranquila() {
 		return combustible >= 4000 && velocidad < 12000
+	}
+
+	method combustible() {
+		return combustible
+	}
+
+	method velocidad() {
+		return velocidad
+	}
+
+	method direccion() {
+		return direccion
 	}
 
 }

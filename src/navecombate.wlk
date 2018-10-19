@@ -3,8 +3,12 @@ import navesespaciales.*
 class NaveCombate inherits NaveEspacial {
 
 	var invisible
-	var misilesDesplegados=false
+	var misilesDesplegados = false
 	var mensaje = []
+
+	constructor(com) {
+		combustible = com
+	}
 
 	method ponerseVisible() {
 		invisible = false
@@ -56,7 +60,6 @@ class NaveCombate inherits NaveEspacial {
 
 	override method prepararViaje() {
 		self.replegarMisiles()
-		self.acelerar(15000)
 		self.emitirMensaje("Saliendo en misión")
 		super()
 		self.acelerar(15000)
@@ -70,11 +73,10 @@ class NaveCombate inherits NaveEspacial {
 	override method avisar() {
 		self.emitirMensaje("Amenaza recibida")
 	}
-	
-	override method estaTranquila(){
-		
+
+	override method estaTranquila() {
 		return super() && !self.misilesDesplegados()
-		
 	}
 
 }
+
