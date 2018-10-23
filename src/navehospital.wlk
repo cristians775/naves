@@ -14,9 +14,7 @@ class NaveHospital inherits NavePasajero {
    }
 	override method recibirAmenaza() {
 		
-	
-		self.escapar()
-		self.avisar()
+    	super()
 	    self.prepararQuirofanos()
 	}
   override method estaTranquila(){
